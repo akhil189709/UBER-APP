@@ -3,11 +3,12 @@ dotenv.config();
 const express = require("express");
 const cors = require("cors");
 const app = express();
-
 const connectToDb = require("./DB/db");
 const userRoutes = require("../Backend/routes/user.routes");
 
+
 connectToDb();
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

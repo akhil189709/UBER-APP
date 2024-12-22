@@ -1,22 +1,22 @@
-const { ZodFirstPartyTypeKind } = require("zod");
 const userModel = require("../models/user.model");
 
 module.exports.createUser = async ({
-  firstName,
-  lastName,
-  password,
+  firstname,
+  lastname,
   email,
+  password,
 }) => {
-  if (!firstName || !password || !email) {
-    throw new Error("All the above fields are required");
+  if (!firstname || !email || !password) {
+    throw new Error("All fields are required");
   }
   const user = userModel.create({
-    fullName: {
-      firstName,
-      lastName,
+    fullname: {
+      firstname,
+      lastname,
     },
-    password,
     email,
+    password,
   });
+
   return user;
 };
