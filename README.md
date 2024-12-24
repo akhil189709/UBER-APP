@@ -71,4 +71,4 @@ This endpoint allows you to register a new user by providing the required inform
         }
       ]
     }
-    ```
+    ``
